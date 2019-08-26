@@ -387,12 +387,335 @@ Here are the results:
 While there's an initial overhead to using all the matrix representation and operations,
 the linear algebra approach seems to scale better than the naive approach.
 
-I'm actually pretty confident that there's
-a more efficient implementation of the naive approach, but I suspect that the linear algebra
+I think there could be a more efficient implementation of the naive approach, but I suspect that the linear algebra
 implementation would still be faster, both asymptotically and practically for relatively large graphs, due to fast matrix multiplication techniques.
 
 ### Hierarchical aggregations ###
+Let's consider another task. We have Yummly's ["What's Cooking?"](https://www.kaggle.com/c/whats-cooking/data) public dataset, containing some 40k recipes.
+Each recipe is classified to a cuisine, and additionally has a list of the recipe's ingredients. In order to better organize the large dataset,
+we construct two hierarchies: a cuisine hierarchy and an ingredient hierarchy (containing only "common" ingredients, which appear in at least 100 recipes).
 
+Here is the cuisine hierarchy:
+{% highlight python %}
+american
+	north american
+		southern_us
+		cajun_creole
+		mexican
+	caribbean
+		jamaican
+	south american
+		brazilian
+asian
+	east asian
+		chinese
+		japanese
+		korean
+	south asian
+		indian
+	southeast asian
+		thai
+		vietnamese
+		filipino
+european
+	southern european
+		greek
+		spanish
+		italian
+	eastern european
+		russian
+	northern european
+		british
+		irish
+	western european
+		french
+african
+	moroccan
+{% endhighlight %}
 
+And here's a snippet of the ingredient hierarchy (the full hierarchy contains about 650 nodes):
+{% highlight python %}
+dairy
+	cheese
+		shredded cheese
+		cream cheese
+			cream cheese, soften
+		feta cheese
+			feta cheese crumbles
+		cheddar cheese
+			sharp cheddar cheese
+			shredded cheddar cheese
+			shredded sharp cheddar cheese
+		provolone cheese
+		parmesan cheese
+			fresh parmesan cheese
+			grated parmesan cheese
+			freshly grated parmesan
+		mozzarella cheese
+			part-skim mozzarella cheese
+			shredded mozzarella cheese
+		monterey jack
+			jack cheese
+			shredded Monterey Jack cheese
+		mascarpone
+		Mexican cheese blend
+		romano cheese
+			pecorino romano cheese
+		parmigiano reggiano cheese
+		ricotta cheese
+			ricotta
+				part-skim ricotta cheese
+		goat cheese
+		fontina cheese
+		cottage cheese
+		queso fresco
+		paneer
+		cotija
+{% endhighlight %}
+
+These hierarchies allow us to generalize some concepts and group them together.
+
+We now want to count cuisine-ingredient combinations, i.e. how many recipes belong to a certain cuisine and contain a certain recipe.
+This aggregation should be done hierarchically: an Italian recipe is also South-European and European, and the ingredient "diced tomatoes"
+also counts as "tomatoes" and "vegetables".
+
+#### Naive solution ####
+Once again, the naive solution doesn't involve explicitly representing the problem in graph terms.
+
+{% highlight python linenos %}
+def aggregate(recipes, cuisine_hier, ingredient_hier):
+	# Initialize empty aggregations
+	res = {cuisine: {ingredient: 0
+		for ingredient in ingredient_hier.keys()}
+		for cuisine in cuisine_hier.keys()}
+
+	for recipe in recipes:
+		aggregate_recipe(recipe, res,
+							cuisine_hier, ingredient_hier)
+
+	def query(cuisine, ingredient):
+		return res[cuisine][ingredient]
+
+	return query
+
+def aggregate_recipe(recipe, res, cuisine_hier, ingredient_hier):
+	cuisine = recipe['cuisine']
+	for ingredient in set(recipe['ingredients']):
+		aggregate_ingredient(res, cuisine, ingredient,
+								cuisine_hier, ingredient_hier)
+
+def aggregate_ingredient(res, cuisine, ingredient,
+							cuisine_hier, ingredient_hier):
+	if ingredient not in ingredient_hier:
+		return
+
+	# For every cuisine up the hierarchy, for every ingredient up
+	# the hierarchy, add 1 to the aggregated count
+	curr_cuisine = cuisine
+	while curr_cuisine in cuisine_hier:
+		curr_ingredient = ingredient
+		while curr_ingredient in ingredient_hier:
+			res[curr_cuisine][curr_ingredient] += 1
+			curr_ingredient = ingredient_hier[curr_ingredient]
+
+		curr_cuisine = cuisine_hier[curr_cuisine]
+{% endhighlight %}
+
+The solution is pretty straightforward: for each recipe we iteratively count up the hierarchies.
+
+#### Graph representation ####
+Before we look at the linear algebra approach, let's see how this problem translates to graph terms.
+The hierarchies are simply trees, with an edge from each node to its parent:
+
+{% include matrix-exponentiation-fun/tree1.html %}
+
+Each cuisine-ingredient pair is directly related to two nodes, and the aggregation involves all nodes to which we can
+arrive from those directly related nodes.
+
+#### Ancestry matrices ####
+Let's try to calculate that "all nodes to which we can arrive" from a certain node. In the context of hierarchies,
+these paths can be interpreted as the "ancestry lineage" of a certain node, i.e. all nodes appearing on the path
+from a certain node in the hierarchy tree. This is another instance of a (binary) BFS, which means we can use matrix
+exponentiation to find the ancestry matrix. The initial matrix will be the hierarchy matrix: a direct matrix representation
+of the hierarchy tree, added to the identity matrix (as in the unit conversion case).
+
+Given the following tree:
+{% include matrix-exponentiation-fun/tree2.html %}
+
+The hierarchy matrix (using node order `A, B, C, D, E`) will look like:
+
+$$
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+
+Here the rows represent children nodes and the columns parent nodes: thus the element at row 4 (node `D`), column 2 (node `B`) is `1`,
+because node `D` is a child of node `B`.
+
+Multiplying the hierarchy matrix by itself yields (with binary multiplication):
+
+$$
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+\end{pmatrix}^{2} =
+\begin{pmatrix}
+1 & 0 & 0 & 0 & 0 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 1 & 0 & 0 \\
+1 & 1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 & 1 \\
+\end{pmatrix}
+$$
+
+The resulting matrix additionally contains the information that node `A` is an ancestor of nodes `D` and `E`.
+Since the longest path in the tree is of length 2, in this case we are done; in general, as before,
+we continue until multiplications don't cause further changes in the matrix.
+
+#### Linear algebra solution ####
+Our solution is going to take the following form:
+1. Convert the recipe representation to matrix form, generating two matrices: recipe cuisines and recipe ingredients.
+2. Create ancestry matrices for the two hierarchies.
+3. Using matrix multiplication to calculate the final aggregation.
+
+The conversion to matrix representation will create a matrix with each recipe represented as a row; in
+the cuisine matrix, there will be a column for each cuisine and each recipe row will have a `1` in the relevant cuisine.
+Similarly, in the ingredient matrix, there will be a column for each ingredient, and each recipe row will have `1`'s in all
+relevant ingredients (there could be more than one).
+
+In this case, since we expect the matrices to be sparse, we'll use [scipy's sparse matrices](https://docs.scipy.org/doc/scipy/reference/sparse.html).
+For this reason we'll use the `**` operator to take the matrix power instead of numpy's `matrix_power`, as numpy functions often don't work well with sparse matrices.
+
+After converting the representation and creating the ancestry matrices, what's left is a few final multiplications.
+If we call the cuisine ancestry matrix `C`, ingredient ancestry matrix `I`, recipe cuisines matrix `Rc` and recipe ingredients `Ri`,
+then we can make the following observations:
+* Multiplying `Rc` by `C` will yield, for each recipe, all the cuisines it belongs to (including ancestors).
+* Multiplying `Ri` by `I` will yield, for each recipe, all the ingredients in the recipe (including ancestors).
+* Multiplying the above two matrices (transposing the first) yields, for each cuisine and ingredient pair, how many recipes belong
+to that cuisine and contain that ingredient - which is exactly what we want!
+
+So in conclusion the final calculation is:
+
+$$ (Rc \cdot C)^{T} \cdot (Ri \cdot I) $$
+
+And without further ado, here's the full code:
+
+(The `@` operator in Python 3 denotes matrix dot product, though in this case it's not strictly necessary as sparse matrices overload the `*` operator for dot product as well.)
+
+{% highlight python linenos %}
+import numpy as np
+from scipy.sparse.lil import lil_matrix
+from scipy.sparse.csr import csr_matrix
+
+def aggregate(recipes, cuisine_hier, ingredient_hier):
+	# Establish consistent node <-> index mappings
+	# for both hierarchies
+	index2cuisine = dict(enumerate(cuisine_hier.keys()))
+	cuisine2index = {v: k for k, v in index2cuisine.items()}
+
+	index2ingredient = dict(enumerate(ingredient_hier.keys()))
+	ingredient2index = {v: k for k, v in index2ingredient.items()}
+
+	# Map recipes to cuisine matrix and ingredient matrix
+	recipe2cuisine = \
+		recipe_cuisines(recipes, cuisine2index).astype(int)
+	recipe2ingredient = \
+		recipe_ingredients(recipes, ingredient2index).astype(int)
+
+	# Create cuisine ancestry matrix
+	cuisine_hier_mat = \
+		construct_hierarchy_matrix(cuisine_hier, cuisine2index)
+	cuisine_ancestry_mat = \
+		construct_ancestry_matrix(cuisine_hier_mat).astype(int)
+
+	# Create ingredient ancestry matrix
+	ingredient_hier_mat = \
+		construct_hierarchy_matrix(ingredient_hier, ingredient2index)
+	ingredient_ancestry_mat = \
+		construct_ancestry_matrix(ingredient_hier_mat).astype(int)
+
+	# Aggregate
+	counts = (recipe2cuisine @ cuisine_ancestry_mat).T @ \
+				(recipe2ingredient @ ingredient_ancestry_mat)
+
+	def query(cuisine, ingredient):
+		return counts[cuisine2index[cuisine],
+					ingredient2index[ingredient]]
+
+	return query
+
+def construct_hierarchy_matrix(hierarchy, node2index):
+	N = len(hierarchy)
+	hier_mat = lil_matrix(np.eye(N), dtype=bool)
+	for child, parent in hierarchy.items():
+		if parent is None:
+			continue
+
+		hier_mat[node2index[child], node2index[parent]] = 1.
+
+	return csr_matrix(hier_mat)
+
+def construct_ancestry_matrix(hierarchy_matrix):
+	ancestry_matrix = hierarchy_matrix
+	POWER_STEP = 5
+	while True:
+		new_ancestry_matrix = ancestry_matrix ** POWER_STEP
+		if not (new_ancestry_matrix != ancestry_matrix).max():
+			return new_ancestry_matrix
+
+		ancestry_matrix = new_ancestry_matrix
+
+def recipe_cuisines(recipes, cuisine2index):
+	recipe2cuisine = np.zeros((len(recipes), len(cuisine2index)))
+	for i, recipe in enumerate(recipes):
+		recipe2cuisine[i, cuisine2index[recipe['cuisine']]] = 1.
+
+	return csr_matrix(recipe2cuisine, dtype=bool)
+
+def recipe_ingredients(recipes, ingredient2index):
+	recipe2ingredients = np.zeros((len(recipes),
+								len(ingredient2index)))
+	for i, recipe in enumerate(recipes):
+		for ingredient in recipe['ingredients']:
+			if ingredient in ingredient2index:
+				recipe2ingredients[i,
+				 	ingredient2index[ingredient]] = 1.
+
+	return csr_matrix(recipe2ingredients, dtype=bool)
+
+{% endhighlight %}
+
+#### Comparison ####
+First, we see that in this instance the linear algebra solution requires much more code to implement,
+and is again much less intuitively understandable.
+
+Regarding performance, on my machine, the naive approach (on the full training set available on Kaggle) takes about 0.9 seconds on average,
+while the linear algebra approach takes about 0.48 seconds. An improvement indeed, but the factor is not very impressive.
+However, I also separately timed the matrix operations (excluding the representation conversion), and they took only about 0.045 seconds on average.
+So most of the overhead in the linear algebra approach can be eliminated if we maintain the data in the appropriate format,
+to get, in this case, an improvement factor of about 20x. Neat!
+
+#### Other use cases ####
+This method is useful in several other similar situations:
+* When we already have a matrix with the aggregated amounts for leaf nodes, and we just want to aggregate to non-leaf nodes.
+* When we have a more complicated relationship graph which can be represented as a DAG (directed acyclic graph). In this case the initial hierarchy matrix (used for
+calculating the ancestry matrix) should be the graph representation of the DAG, in a similar manner to the tree representation.
 
 ### Conclusions ###
+In this post we explored how matrix multiplication can be used to calculate graph BFS operations, and examined two cases where using matrix operations speeds up
+computation (at the expense of clarity): unit conversion and hierarchical aggregations. In both cases, for large enough scales (and using the proper representation)
+the speedup is by an order of magnitude. In addition, algorithms based on matrix multiplication can further be scaled up with hardware - utilizing GPUs and parallelizing computation.
+
+### More stuff ###
+All the code for the examples can be found [here](https://github.com/andersource/matrix-exponentiation-fun).
+
+[This book](https://bookstore.ams.org/stml-53) details many applications of linear algebra in computer science and other areas of mathematics.
+Interestingly, some of the algorithmic applications offer the best known polynomial runtime for the given tasks.
