@@ -10,7 +10,7 @@ You'll probably learn more about me reading the rest of the site, so in the mean
 
 {% include cat.html  %}
 
-Feel free to contact me: [hi@andersource.???](mailto:hi@andersource.???)
+Feel free to contact me: [hi@andersource.dev](mailto:hi@andersource.dev)
 
 This site is built using [Jekyll](https://jekyllrb.com/).
 

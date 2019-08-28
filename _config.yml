@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: andersource
-email: hi@andersource.???
+email: hi@andersource.dev
 description: >- # this means to ignore newlines until "baseurl:"
   Experiments and musings
 baseurl: "" # the subpath of your site, e.g. /blog

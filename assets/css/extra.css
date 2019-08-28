@@ -1,3 +1,14 @@
 pre {
 	tab-size: 4;
 }
+
+.footer-copyright {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 0.8em;
+}
+
+.footer-copyright a {
+	text-decoration: none;
+	color: gray;
+}
