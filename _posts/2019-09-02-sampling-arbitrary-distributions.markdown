@@ -52,7 +52,7 @@ Then its CDF would be:
 To sample a random number from this distribution, we randomly place a horizontal line, and take the _x_ value where it intersects the CDF:
 ![Inverse sampling the CDF](/assets/arbitrary-distribution-sampler/cdf2.jpeg)
 
-Finding the corresponding x for a sampled probability can be done relatively efficiently (_O(n logn)_) with a binary search, as the CDF is a non-decreasing series.
+Finding the corresponding x for a sampled probability can be done relatively efficiently (_O(logn)_) with a binary search, as the CDF is a non-decreasing series.
 
 
 ### Effect size and sample size ###
