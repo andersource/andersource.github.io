@@ -1,0 +1,35 @@
+<div>
+	<style>
+		canvas {
+			margin: 10px;
+		}
+
+		button {
+			border: none;
+			padding: 10px;
+			margin: 2px 10px;
+			background-color: #88A5F0;
+			color: white;
+		}
+	</style>
+	<div style="text-align: center;">
+		<canvas id="draw_distribution" width="600px" height="300px"></canvas>
+		<div>
+			<button onclick="setDistribution(UNIFORM);">Uniform</button>
+			<button onclick="setDistribution(NORMAL);">Normal</button>
+			<button onclick="setDistribution(SKYLINE);">Skyline</button>
+		</div>
+		<div>
+			<button onclick="single_sample()">Single sample</button>
+			<p id="single_sample_result" style="display: inline-block;">0</p>
+		</div>
+		<div>
+			<span>Sample size: 1000</span>
+			<input type="range" id="sample_n" min="0" max="3.5" value="1.5" step="0.01"/>
+			<span>~3M</span>
+			<button onclick="multi_sample()">Multi sample</button>
+		</div>
+		<canvas id="multi_sample_result" width="600px" height="300px"></canvas>
+	</div>
+	<script src="/assets/arbitrary-distribution-sampler/sampler.js"></script>
+</div>
