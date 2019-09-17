@@ -6,7 +6,7 @@ categories:
 ---
 
 ## Demo
-Use a QR code scanner with a mobile device to scan this code:
+Use a QR code scanner with a mobile device to scan this code, and start moving the earth!
 
 {% include device-rotation-controller/globe.html %}
 
@@ -17,3 +17,10 @@ The documentation even helps you out converting Euler angles (the event's repres
 * [three.js](https://threejs.org) is a powerful 3D javascript library; the globe was adapted from [this example](https://threejs.org/examples/software_geometry_earth.html).
 * [PeerJS](https://peerjs.com) is a javascript p2p library wrapping WebRTC with a very easy-to-use API, and they even provide a default, free broker server for the initial connection.
 * I used [qrcode-generator](https://github.com/kazuhikoarase/qrcode-generator#readme) to generate the QR code.
+
+### Code
+The code is available on Github:
+[globe.html](https://github.com/andersource/andersource.github.io/blob/master/_includes/device-rotation-controller/globe.html),
+[globe.js](https://github.com/andersource/andersource.github.io/blob/master/assets/device-rotation-controller/globe.js),
+[client.html](https://github.com/andersource/andersource.github.io/blob/master/static/rotation-controller-client.html),
+[client.js](https://github.com/andersource/andersource.github.io/blob/master/assets/device-rotation-controller/client.js).
