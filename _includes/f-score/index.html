@@ -1,0 +1,18 @@
+<html>
+	<head>
+		<title>F-score exploration</title>
+		<style>
+			canvas { margin: 0 auto; }
+			#main { margin: 0 auto; text-align: center;}
+			input[type=range] { margin: 0 auto; }
+		</style>
+	</head>
+	<body>
+		<div id="main" style="font-family: monospace; font-size: 0.8em;">
+			<canvas></canvas><br/>
+			Beta: 0.01 <input type="range" id="beta" min="-2" max="2" value="0" step=".1" oninput="on_input_change(this)"/> 100  &nbsp; <span id="beta_value"></span> <br/>
+			Bands: 5 <input type="range" id="bands" min="5" max="100" value="15" step="5" oninput="on_input_change(this)"/> 100  &nbsp; <span id="bands_value"></span>
+		</div>
+		<script src="/assets/f-score/index.js"></script>
+	</body>
+</html>

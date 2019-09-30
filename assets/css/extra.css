@@ -12,3 +12,43 @@ pre {
 	text-decoration: none;
 	color: gray;
 }
+
+input[type=range] {
+	-webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+	background: #ddd;
+	border-radius: 5px;
+	height: 5px;
+	border: none;
+}
+
+input[type=range]::-moz-range-track {
+	background: #ddd;
+	border-radius: 5px;
+	height: 5px;
+	border: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #888;
+	margin-top: -5px;
+}
+
+input[type=range]::-moz-range-thumb {
+	-webkit-appearance: none;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #888;
+	margin-top: -5px;
+}
+
+input[type=range]:focus {
+	outline: none;
+}
