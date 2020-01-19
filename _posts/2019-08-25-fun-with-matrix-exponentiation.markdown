@@ -475,7 +475,7 @@ dairy
 
 These hierarchies allow us to generalize some concepts and group them together.
 
-We now want to count cuisine-ingredient combinations, i.e. how many recipes belong to a certain cuisine and contain a certain recipe.
+We now want to count cuisine-ingredient combinations, i.e. how many recipes belong to a certain cuisine and contain a certain ingredient.
 This aggregation should be done hierarchically: an Italian recipe is also South-European and European, and the ingredient "diced tomatoes"
 also counts as "tomatoes" and "vegetables".
 
