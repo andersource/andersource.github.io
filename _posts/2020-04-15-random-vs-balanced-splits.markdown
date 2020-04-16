@@ -238,6 +238,6 @@ print(B['type'].value_counts())
 
 {% endhighlight %}
 
-If you have any questions regarding its use or suggestions for improvement, [feel free to concat me](hi@andersource.dev).
+If you have any questions regarding its use or suggestions for improvement, [feel free to contact me](hi@andersource.dev).
 
 Happy splitting!
