@@ -5,6 +5,8 @@ date:   2020-04-15 22:00:00 +0300
 categories:
 ---
 
+#### tl;dr: Random splits are common, but maybe not balanced enough for some use cases. I made a [python library for balanced splitting](https://pypi.org/project/balanced-splits/).
+
 Random numbers are cool, and also useful for a lot of stuff. Among others, whenever you want to balance things in some manner,
 random assignment is a good first choice. A load balancer which assigns tasks randomly to servers would fare quite well. This is such a
 simple and powerful idea that the ideas of balance and randomness are often mixed, and we perceive the results of a random process as balanced.
