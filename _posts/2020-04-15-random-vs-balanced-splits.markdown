@@ -34,7 +34,7 @@ performed the split manually with an Excel sheet. The person who was in charge o
 the groups weren't balanced, with some containing a greater percentage of weaker students, creating excessive load on the instructors of those groups
 and higher dropout rate in those groups. They also said that, in hindsight, the group imbalance could already be seen in the groups' aptitude test distributions.
 
-Fearing that some random fluke would mess things up, I started with a random split and spent about 3 hours manually balancing the groups (the schedule was tight and I didn't want to risk [getting lost here](https://xkcd.com/1319/)), and (related or unrelated) things turned out fine. But it was very tedious, and frustrating enough that when I had the time I wrote a script to automate the task, performing a heuristic search for a split that minimizes the distribution differences between the group.
+Fearing that some random fluke would mess things up, I started with a random split and spent about 3 hours manually balancing the groups (the schedule was tight and I didn't want to risk [getting lost here](https://xkcd.com/1319/)), and (related or unrelated) things turned out fine. But it was very tedious, and frustrating enough that when I had the time I wrote a script to automate the task, performing a heuristic search for a split that minimizes the distribution differences between the groups.
 
 ### Balanced split search
 Here is an example of using (crude) [simulated annealing](https://en.wikipedia.org/wiki/Simulated_annealing) to search for a split that is "balanced":
