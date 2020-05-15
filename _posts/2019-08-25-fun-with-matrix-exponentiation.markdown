@@ -114,7 +114,7 @@ any node is done in the context of every possible starting node. We can do this 
 turning from zero to non-zero), we multiply, element-wise, the two vectors that were multiplied (with a dot product) to produce said element. Any non-zero node in
 the resulting vector can be used as the previous node in the context of the path.
 * Conversely, if we're just interested in path existence, and not length or recovery, we can "take bigger steps": instead of multiplying the original matrix by itself every iteration,
-we can take higher powers. This could potentially make the calculation even fast for tools that optimize matrix exponentiation.
+we can take higher powers. This could potentially make the calculation even faster for tools that optimize matrix exponentiation.
 
 Next we'll examine two problems where matrix exponentiation, as a tool for all-to-all BFS, could be useful.
 
