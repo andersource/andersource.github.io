@@ -42,7 +42,7 @@ $$
 \end{pmatrix}
 $$
 
-The node names aren't included in the matrix, but instead are implied by the index, assuming some consistent ordering of nodes, in this case `A, B, C, D, E`.
+The node names aren't included in the matrix, but instead are implied by the index, assuming some consistent ordering of nodes, in this case `A, B, C, D`.
 
 This matrix describes, through non-zero elements, all the trivial paths in the graph - A to B, B to C and C to D.
 
