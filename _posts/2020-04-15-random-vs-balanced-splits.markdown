@@ -3,6 +3,7 @@ layout: post
 title:  "The case for better-than-random splits"
 date:   2020-04-15 22:00:00 +0300
 categories:
+summary: "Random splits are common, but maybe not balanced enough for some use cases. This post explores the problem and a possible solution, introducing a python library I wrote for balanced splitting."
 ---
 
 #### tl;dr: Random splits are common, but maybe not balanced enough for some use cases. I made a [python library for balanced splitting](https://pypi.org/project/balanced-splits/).

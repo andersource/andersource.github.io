@@ -3,6 +3,7 @@ layout: post
 title:  "Sampling arbitrary (discrete) probability distributions with CDF inversion"
 date:   2019-09-02 00:00:00 +0300
 categories:
+summary: "Using a technique called \"inverse transform sampling\", it is possible to draw random numbers from a uniform distribution and transform them to create an arbitrary distribution. Demo included!"
 ---
 The universe we live in is, to the best of our (current) computational capabilities, wildly non-deterministic.
 Until the advent of computers, any desire for determinism had to be sated with the imagination, by defining and manipulating mathematical objects.

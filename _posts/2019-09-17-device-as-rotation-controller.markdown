@@ -3,10 +3,11 @@ layout: post
 title:  "Using a mobile device as a rotation controller"
 date:   2019-09-17 12:00:00 +0300
 categories:
+summary: "Using orientation sensors to rotate the Earth."
 ---
 
 ## Demo
-Use a QR code scanner with a mobile device to scan this code, and start moving the earth!
+Use a QR code scanner with a mobile device to scan this code, and start moving the Earth!
 
 {% include device-rotation-controller/globe.html %}
 
