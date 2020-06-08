@@ -3,7 +3,7 @@ layout: post
 title:  "Using a mobile device as a rotation controller"
 date:   2019-09-17 12:00:00 +0300
 categories:
-summary: "Using orientation sensors to rotate the Earth."
+description: "Using orientation sensors to rotate the Earth."
 ---
 
 ## Demo
