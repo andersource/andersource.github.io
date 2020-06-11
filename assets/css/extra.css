@@ -56,3 +56,12 @@ input[type=range]::-moz-range-thumb {
 input[type=range]:focus {
 	outline: none;
 }
+
+.post-thumbnail {
+	height: 15em;
+	width: 15em;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: contain;
+}
