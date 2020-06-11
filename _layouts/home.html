@@ -10,26 +10,31 @@ layout: default
   {{ content }}
 
   {%- if site.posts.size > 0 -%}
-    <h2 class="post-list-heading">{{ page.list_title | default: "Posts" }}</h2>
-    <ul class="post-list">
+    <div class="post-list">
       {%- for post in site.posts -%}
-      <li>
-        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
-        <span class="post-meta">{{ post.date | date: date_format }}</span>
-        <h3>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title | escape }}
-          </a>
-        </h3>
-        {%- if site.show_excerpts -%}
-          {{ post.excerpt }}
+      <div>
+        <a class="post-link" href="{{ post.url | relative_url }}">
+        {% assign image_style = "contain" %}
+        {%- if post.image_style -%}
+          {% assign image_style = post.image_style %}
         {%- endif -%}
-        {%- if post.description -%}
-          {{ post.description }}
-        {%- endif -%}
-      </li>
+        <div class="post-img" style="background-color: {{ post.themecolor }}; background-image: url({{ post.image }}); background-size: {{ image_style }};">
+        </div>
+        <div class="post-text">
+          <h3>
+              {{ post.title | escape }}
+          </h3>
+          {%- if site.show_excerpts -%}
+            {{ post.excerpt }}
+          {%- endif -%}
+          {%- if post.description -%}
+            <p>{{ post.description }}</p>
+          {%- endif -%}
+        </div>
+        </a>
+      </div>
       {%- endfor -%}
-    </ul>
+    </div>
 
   {%- endif -%}
 

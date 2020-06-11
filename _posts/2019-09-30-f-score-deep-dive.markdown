@@ -3,7 +3,9 @@ layout: post
 title:  "F-score Deep Dive"
 date:   2019-09-30 12:00:00 +0300
 categories:
-description: "The F-score is a common metric for measuring performance of classifiers. It includes a parameter, beta, to control the tradeoff between precision and recall. This post proposes an alternative method for choosing beta."
+description: "An alternative method for choosing beta in the F-score"
+image: "/assets/thumbnails/f1.png"
+themecolor: "#ffcfcf"
 ---
 
 Recently at work we had a project where we used genetic algorithms to evolve a model for a classification task. Our key metrics were [precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall), with precision being somewhat more important than recall (we didn't know exactly how much more important at the start). At first we considered using multi-objective optimization to find the [Pareto front](https://en.wikipedia.org/wiki/Pareto_efficiency) and then choose the desired trade-off, but it proved impractical due to performance issues. So we had to define a single metric to optimize.    

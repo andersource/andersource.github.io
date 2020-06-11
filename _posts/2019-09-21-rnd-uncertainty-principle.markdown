@@ -3,7 +3,9 @@ layout: post
 title:  "Uncertainty Principle in software R&D"
 date:   2019-09-21 13:00:00 +0300
 categories:
-description: "Advocating for caution when assigning too-precise estimates to R&D tasks."
+description: "Advocating for caution when assigning too-precise estimates to R&D tasks"
+themecolor: "#dbffcf"
+image: "/assets/thumbnails/uncertainty_rnd.png"
 ---
 
 [Heisenberg's Uncertainty Principle](https://en.wikipedia.org/wiki/Uncertainty_principle) is an important result in physics, expressing a limit regarding the measurement of certain pairs of particles' physical properties. In essence, it states that the uncertainty of any measurement of these pairs of properties at the same time has a lower bound. For example, if we're measuring a particle's position and velocity, and want to be more certain about the particle's _position_ (measure the position more precisely),
