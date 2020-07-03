@@ -3,10 +3,19 @@ layout: page
 title: Daniel Anderson
 permalink: /cv/
 exclude: True
+style: cv.css
 ---
+<p class="img-container">
+	<img src="/assets/cv/daniel.png">
+</p>
+
 ### Data Scientist, Software Engineer
 
 #### Employment
+**andersource**, Israel - _Self-employed_  
+JULY 2020 - PRESENT  
+Data science and software engineering consulting, freelancing and training.
+
 **Nutrino (acquired by Medtronic)**, Israel - _Data Scientist_  
 JANUARY 2017 - PRESENT    
 Training, fine-tuning and deploying machine learning models.  

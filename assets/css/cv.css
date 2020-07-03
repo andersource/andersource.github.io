@@ -1,0 +1,9 @@
+.img-container {
+	text-align: center;
+}
+
+img {
+	max-width: 35%;
+	border-radius: 50%;
+	border: 1px solid black;
+}
