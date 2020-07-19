@@ -153,7 +153,7 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=.0005),
 					tf.keras.losses.categorical_crossentropy,
 					weighted_categorical_crossentropy([1, 79]),
 			  ],
-			  loss_weights=[.1, .1, 1.])
+			  loss_weights=[.05, .05, 1.])
 
 for i in range(130):
 	hist = model.fit([X1_train, X2_train], [y1_train, y2_train, y3_train],
@@ -169,7 +169,7 @@ for i in range(130):
 				  loss=[
 					  tf.keras.losses.categorical_crossentropy,
 					  tf.keras.losses.categorical_crossentropy,
-					  weighted_categorical_crossentropy([1, 39]),
+					  weighted_categorical_crossentropy([1, 79]),
 				  ],
 				  loss_weights=[.05, .05, 1.])
 {% endhighlight %}
@@ -188,7 +188,7 @@ This model took the longest to train. The average accuracy was **73.3%**, better
 |Baseline		|Nearest neighbor		|70.55%		|70.625%	|65%		|76.25%		|
 |First approach		|Face classification		|70.916%	|71.094%	|65.587%	|76.25%		|
 |Second approach	|Similarity classification	|**74.381%**	|**75.312%**	|65.75%		|**81.9%**	|
-|Combined approach	|first + second			|73.298%	|72.969%	|**66.875%**	|79.484%	|
+|Combined approach	|first + second			|73.328%	|73.125%	|**66.875%**	|78.656%	|
 
 Here's a plot describing the result distributions:
 ![Result distributions](/assets/faces_framing/result_distributions.png)
