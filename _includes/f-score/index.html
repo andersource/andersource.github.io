@@ -10,9 +10,10 @@
 	<body>
 		<div id="main" style="font-family: monospace; font-size: 0.8em;">
 			<canvas></canvas><br/>
-			Beta: 0.01 <input type="range" id="beta" min="-2" max="2" value="0" step=".1" oninput="on_input_change(this)"/> 100  &nbsp; <span id="beta_value"></span> <br/>
+			Beta: 0.01 <input type="range" id="beta" min="-2" max="2" value="0" step=".02" oninput="on_input_change(this)"/> 100  &nbsp; <span id="beta_value"></span> <br/>
 			Bands: 5 <input type="range" id="bands" min="5" max="100" value="15" step="5" oninput="on_input_change(this)"/> 100  &nbsp; <span id="bands_value"></span>
 		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
 		<script src="/assets/f-score/index.js"></script>
 	</body>
 </html>
