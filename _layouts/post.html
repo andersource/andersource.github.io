@@ -9,7 +9,7 @@ layout: default
     {% assign image_style = "contain" %}
     {%- unless page.hide_thumbnail -%}
       <div class="post-thumbnail" style="background-image: url({{ page.image }}); "></div>
-    {%- endif -%}
+    {%- endunless -%}
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
