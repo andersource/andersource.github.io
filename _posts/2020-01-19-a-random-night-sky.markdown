@@ -6,5 +6,6 @@ categories:
 description: "Procedurally generating a random night sky"
 image: "/assets/thumbnails/night_sky.png"
 image_style: "cover"
+hide_thumbnail: true
 ---
 {% include night-sky/index.html %}

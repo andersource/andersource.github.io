@@ -7,7 +7,9 @@ layout: default
     <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}</h1>
     <h2>{{ page.description | escape }}</h2>
     {% assign image_style = "contain" %}
-    <div class="post-thumbnail" style="background-image: url({{ page.image }}); "></div>
+    {%- unless page.hide_thumbnail -%}
+      <div class="post-thumbnail" style="background-image: url({{ page.image }}); "></div>
+    {%- endif -%}
     <p class="post-meta">
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
         {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
