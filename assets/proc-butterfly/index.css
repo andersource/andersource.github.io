@@ -1,0 +1,25 @@
+#butterfly-container {
+  width: 100%;
+}
+
+canvas {
+  width: 100%;
+}
+
+button {
+	background: none;
+	outline: none;
+	border: 1px solid #121212;
+	font-size: 1.2em;
+	font-family: monospace;
+  cursor: pointer;
+}
+
+button:hover {
+	background: rgba(220, 220, 220, 0.5);
+}
+
+#button-container {
+  width: 99%;
+  text-align: center;
+}
