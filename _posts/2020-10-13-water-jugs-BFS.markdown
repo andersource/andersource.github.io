@@ -27,7 +27,7 @@ Now the real task is to write a program that, given the volumes of the jugs and 
 The way we'll approach this is by treating each state of the pair of jugs as a node in the graph of all possible states. My notation for states will be `(amount of water in J3, amount of water in J5)`. We'll create an edge
 from node `(a, b)` to node `(c, d)` if there's some legitimate, atomic action we can take in state `(a, b)` to arrive at state `(c, d)`. For example, we'll draw an edge from `(0, 5)` to `(3, 2)` because in the former state we can pour `J5` into `J3` until `J3` is full, arriving at the latter state.
 
-The key insight is that in such a graph, a path from the node corresponding to the initial state to the node corresponding to the desired state is equivalent to a solution - we can use each edge to reconstruct the required action. And we can use BFS to search for such a path, and, if it exists, get the shortest possible solution! Quite neat.
+The key insight is that in such a graph, a path from the node corresponding to the initial state to the node corresponding to the desired state is equivalent to a solution - we can use each edge to reconstruct the required action. And we can use BFS to search for such a path, and, if it exists, get the shortest possible solution! Quite neat. Formulating the problem like this is an instance of a [state space search](https://en.wikipedia.org/wiki/State_space_search).
 
 Here's how the full graph for the `(3, 5)` pouring puzzle looks like, with the starting node, target nodes and path highlighted:
 
