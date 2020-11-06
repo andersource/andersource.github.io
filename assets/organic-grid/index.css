@@ -1,0 +1,131 @@
+svg {
+  width: 80%;
+  margin-left: 10%;
+}
+
+svg line {
+  stroke: rgb(30, 30, 40);
+  stroke-width: .05;
+}
+
+svg line.temp-line {
+  stroke-dasharray: 1;
+
+}
+
+svg rect {
+  fill: #A3C4C9;
+}
+
+svg polygon, svg path {
+  fill: transparent;
+  stroke: none;
+  stroke-linejoin: round;
+  r: 2;
+}
+
+svg polygon:hover, svg path:hover {
+  fill: rgba(255, 255, 255, .1);
+  stroke: #FFF;
+  stroke-width: .05;
+}
+
+svg circle {
+  r: .1;
+  fill: rgba(30, 30, 40, .5);
+  stroke: none;
+}
+
+svg path.red {
+  fill: rgb(240, 100, 100);
+  stroke: rgb(100, 0, 0);
+  stroke-width: .1;
+}
+
+svg path {
+  stroke-width: .1;
+}
+
+#buttons {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: -7%;
+}
+
+.color-button {
+  display: inline-block;
+  border-radius: 5px;
+  width: 5%;
+  padding-bottom: 5%;
+  margin-left: 10px;
+  box-shadow: 1px 1px 2px 0px #555;
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  text-align: center;
+  background: rgba(100, 100, 100, .7);
+  margin-left: 20px;
+  padding: 3px;
+  cursor: pointer;
+  margin-top: -20px;
+  position: relative;
+  top: -10px;
+  border-radius: 5px;
+  color: white;
+  box-shadow: 1px 1px 2px 0px #555;
+}
+
+.color-button:hover, .button:hover {
+  box-shadow: 2px 2px 3px 1px #666;
+}
+
+.color-1, svg path.color-1 {
+  background: #e99a99;
+  fill: #e99a99;
+  stroke: #9b6666;
+  stroke-width: .1;
+}
+
+.color-2, svg path.color-2 {
+  background: #ffe59a;
+  fill: #ffe59a;
+  stroke: #dfb22d;
+  stroke-width: .1;
+}
+
+.color-3, svg path.color-3 {
+  background: #a6d593;
+  fill: #a6d593;
+  stroke: #78b160;
+  stroke-width: .1;
+}
+
+.color-4, svg path.color-4 {
+  background: #b5a7d5;
+  fill: #b5a7d5;
+  stroke: #887ea3;
+  stroke-width: .1;
+}
+
+.color-5, svg path.color-5 {
+  background: #6e9feb;
+  fill: #6e9feb;
+  stroke: #456596;
+  stroke-width: .1;
+}
+
+.color-6, svg path.color-6 {
+  background: #c27ba0;
+  fill: #c27ba0;
+  stroke: #694256;
+  stroke-width: .1;
+}
+
+.color-7, svg path.color-7 {
+  background: #dcd4af;
+  fill: #dcd4af;
+  stroke: #8d886e;
+  stroke-width: .1;
+}

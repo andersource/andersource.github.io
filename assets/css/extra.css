@@ -65,3 +65,7 @@ input[type=range]:focus {
 	background-position: center center;
 	background-size: contain;
 }
+
+figcaption {
+	text-align: center;
+}
