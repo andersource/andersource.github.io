@@ -134,7 +134,7 @@ O1 = Dense(40, activation='softmax', input_shape=(32,), name='face_class')
 R1 = BN2(L2(BN1(L1(x1))))
 R2 = BN2(L2(BN1(L1(x2))))
 
-C1 = concatenate([R1, R2], name='face_rep_concat')i
+C1 = concatenate([R1, R2], name='face_rep_concat')
 L4 = Dense(64, activation='relu', input_shape=(128,), name='comparison_dense')
 BN3 = BatchNormalization(name='batch_norm3')
 O2 = Dense(2, activation='softmax', input_shape=(64,), name='comparison_res')
