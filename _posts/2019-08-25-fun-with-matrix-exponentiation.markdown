@@ -720,7 +720,7 @@ the speedup is by an order of magnitude. In addition, algorithms based on matrix
 ### More stuff ###
 All the code for the examples can be found [here](https://github.com/andersource/matrix-exponentiation-fun).
 
-[Graph BLAS](http://graphblas.org/index.php?title=Graph_BLAS_Forum) is a large-scale open effort at creating standardized primitives for graph algorithms in the language of linear algebra.
+[Graph BLAS](https://graphblas.github.io/) is a large-scale open effort at creating standardized primitives for graph algorithms in the language of linear algebra.
 
 [This book](https://bookstore.ams.org/stml-53) details many applications of linear algebra in computer science and other areas of mathematics.
 Interestingly, some of the algorithmic applications offer the best known polynomial runtime for the given tasks.
