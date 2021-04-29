@@ -17,6 +17,11 @@ pre {
 	color: gray;
 }
 
+.center-image {
+	display: block;
+	margin: 0 auto;
+}
+
 input[type=range] {
 	-webkit-appearance: none;
 }
