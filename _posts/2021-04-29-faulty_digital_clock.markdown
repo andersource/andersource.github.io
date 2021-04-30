@@ -110,6 +110,7 @@ print(candidates)
 And there we have our solution.
 
 ### Some notes
+* There's a small modification we can do to make the unary constraints stronger: we can keep track of which LED segments _are_ functioning, and use that information to rule out digits which should have one of those segments on but (but is off in the display). This for example will rule out `0`, `4`, `5`, `6`, `8`, `9` from the third state in our example.
 * I think the formal equivalent of what most people would do is to apply the unary constraints, then start a [backtracking search](https://en.wikipedia.org/wiki/Backtracking), i.e. guess at some digit based on the unary constraints and see if it fits, and going back once they see a mistake. Backtracking is widely used in constraint satisfaction problems, although in this case constraint propagation was sufficient. Usually, constraint propagation is applied before backtracking to make the search space smaller.
 * This is an extremely simple constraint propagation problem - it's highly constrained, all the constraints are either unary or binary, and the binary constraints form a linear graph. This is why constraint propagation alone is sufficient to find all feasible solutions, and why a simple forward and backward pass are enough.
 * The general problem of constraint satisfaction is NP-complete.
