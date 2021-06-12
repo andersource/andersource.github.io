@@ -31,7 +31,7 @@ $$ I \in \mathbb{R}^{n \times 3} $$   - Flattened image
 
 $$ C_1 \in \mathbb{R}^{m \times 3} $$   - Colors to replace (including fixed colors)
 
-$$ C_2 \in \mathbb{R}^{m \times 3} $$   - Color to replace with (including fixed colors)
+$$ C_2 \in \mathbb{R}^{m \times 3} $$   - Colors to replace with (including fixed colors)
 
 
 #### Variables
@@ -43,7 +43,7 @@ $$ B \in \mathbb{R}^{k \times 3} $$
 $$ N \in \mathbb{R}^{k \times 3} $$
 
 #### Desired transformation: $$ \sigma(\sigma(IT)N) $$
-This will yield the (flattened) image with colors replaced.
+This will yield the (flattened) image with colors replaced. ($$ \sigma $$ refers to the [Sigmoid function](https://en.wikipedia.org/wiki/Sigmoid_function).)
 
 #### Problem
 Minimize:
