@@ -14,7 +14,7 @@ Go back in time
 It happened at Midnight
 Or so says the wee mite
 ```
-Why do all escape rooms have to be so easy? But as you reach for the clock, a woeful site strikes your eyes:
+Why do all escape rooms have to be so easy? But as you reach for the clock, a woeful sight strikes your eyes:
 
 ![Digital clock with some LED segments missing](/assets/faulty-digital-clock/really_faulty_digital_clock.png)
 
