@@ -17,6 +17,7 @@
         </label>
 
         <div class="trigger">
+          <a class="page-link" href="/">posts</a>
           {%- for path in page_paths -%}
             {%- assign my_page = site.pages | where: "path", path | first -%}
             {%- unless my_page.exclude -%}

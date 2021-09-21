@@ -2,6 +2,7 @@
 layout: page
 title: about
 permalink: /about/
+style: home.css
 ---
 
 Hi! I'm Daniel, a software engineer and data scientist. [Work with me](/work_together/) \| [CV](/cv/)
