@@ -14,3 +14,5 @@ You'll probably learn more about me reading the rest of the site, so in the mean
 Feel free to contact me: [hi@andersource.dev](mailto:hi@andersource.dev)
 
 This site is built using [Jekyll](https://jekyllrb.com/).
+
+Buy me a coffee (or, more likely, a cookie) on [ko-fi.com](https://ko-fi.com/andersource).
