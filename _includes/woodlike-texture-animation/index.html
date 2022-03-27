@@ -1,0 +1,35 @@
+<html>
+	<head>
+		<title>F-score exploration</title>
+		<style>
+			canvas { margin: 0 auto; }
+			#main { margin: 0 auto; text-align: center;}
+		</style>
+	</head>
+	<body>
+		<div id="main" style="font-family: monospace; font-size: 0.8em;">
+			<canvas></canvas><br/>
+			<button id="btnPause" onclick="btnPlay(0);">Pause</button>
+			<button id="btnPlay" onclick="btnPlay(1);">Play</button>
+			<button id="btnReset" onclick="btnReset();">Reset</button>
+			<button id="btnFullscreen" onclick="btnFullscreen();">Full screen</button>
+		</div>
+		<style type="text/css">
+			button {
+				background: none;
+				color: #010101;
+				outline: none;
+				border: 1px solid #010101;
+				font-size: 1.2em;
+				font-family: monospace;
+				cursor: pointer;
+			}
+
+			button:hover {
+				background: rgba(200, 200, 200, 0.5);
+			}
+		</style>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+		<script src="/assets/woodlike-texture-animation/index.js"></script>
+	</body>
+</html>
