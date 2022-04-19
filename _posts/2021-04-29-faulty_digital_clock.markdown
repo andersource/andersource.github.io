@@ -4,7 +4,7 @@ title:  "The faulty digital clock problem"
 date:   2021-04-29 23:00:00 +0300
 categories:
 description: "Telling the time with a faulty digital clock and constraint propagation"
-image: "/assets/thumbnails/faulty_digital_clock.png"
+image: "/assets/thumbnails/faulty_digital_clock.webp"
 image_style: "cover"
 ---
 You enter the escape room alone, knowing it's not a good idea. As the door locks, you notice only two things in the room: a note and a digital clock.

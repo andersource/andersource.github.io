@@ -4,7 +4,7 @@ title:  "Fun with Matrix Exponentiation"
 date:   2019-08-25 17:21:33 +0300
 categories:
 description: "Exploring the use of matrix exponentiation in graph-related problems"
-image: "/assets/thumbnails/fun_matrix_exponentiation.png"
+image: "/assets/thumbnails/fun_matrix_exponentiation.webp"
 themecolor: "#fbf3c8"
 ---
 Well, _fun_ might be a bit of a stretch, but I'll let you decide for yourself.

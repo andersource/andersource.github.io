@@ -4,7 +4,7 @@ title:  "Water jugs and BFS"
 date:   2020-10-13 11:55:00 +0300
 categories:
 themecolor: "#fff8e6"
-image: "/assets/thumbnails/water_jugs_BFS.png"
+image: "/assets/thumbnails/water_jugs_BFS.webp"
 description: "Using graphs to solve puzzles"
 ---
 Random highschool memory: while waiting for some class, I was pondering a puzzle. You know, one of these [wolf, goat and cabbage](https://en.wikipedia.org/wiki/Wolf,_goat_and_cabbage_problem) puzzles, only a bit knottier. I was just starting to take programming classes at school, and as I was searching for the solution, another puzzle, much trickier, occurred to me: _write a program to solve the puzzle_. Between writing "2D games" with [ika](https://github.com/andyfriesen/ika) and doing seemingly pointless exercises at school, I felt I had no handle whatsoever to approach this problem. After thinking about it hard for some time I gave up.

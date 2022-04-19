@@ -4,7 +4,7 @@ title:  "Image color replacement with numerical optimization"
 date:   2021-06-12 23:30:00 +0300
 categories:
 description: "Numerical Optimization course final project"
-image: "/assets/thumbnails/image_color_replacement.png"
+image: "/assets/thumbnails/image_color_replacement.webp"
 image_style: "cover"
 ---
 The topic of color replacement in images has interested me long before I started programming. Playing around with free tools and simple processing approaches (e.g. hue replacement in the [HSV space](https://en.wikipedia.org/wiki/HSL_and_HSV)) never felt "satisfying" in relation to what I was imagining when specifying the replacement colors - there's always some fidgety part such as specifying thresholds which causes sharp edges or other strange-looking artifacts, or simply the replacement hues seem "off". Various papers exist that do seem to do a good job (see [this](https://ieeexplore.ieee.org/abstract/document/7859399) and [this](https://link.springer.com/article/10.1007/s11042-015-2579-4) for some examples) and Photoshop [naturally has an implementation](https://helpx.adobe.com/photoshop/using/replace-colors.html), but when the time came to choose a topic for my final project in numerical optimization, I thought it was a good opportunity to take a shot at the problem myself. It's a challenging problem and while the results are far from perfect, I'm pretty happy with how it turned out.

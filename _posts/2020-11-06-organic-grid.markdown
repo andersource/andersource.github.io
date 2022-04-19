@@ -4,7 +4,7 @@ title:  "Generating an organic grid"
 date:   2020-11-06 09:40:00 +0300
 categories:
 description: "Making Townscaper-style organic grids"
-image: "/assets/thumbnails/organic_grid.png"
+image: "/assets/thumbnails/organic_grid.webp"
 image_style: "cover"
 hide_thumbnail: true
 ---

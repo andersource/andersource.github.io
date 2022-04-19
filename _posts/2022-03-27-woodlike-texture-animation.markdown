@@ -4,7 +4,7 @@ title:  "Wood-like texture generation and animation"
 date:   2022-03-27 21:30:00 +0300
 categories:
 themecolor: "#f6f6ff"
-image: "/assets/thumbnails/woodlike_texture.png"
+image: "/assets/thumbnails/woodlike_texture.webp"
 image_style: "cover"
 hide_thumbnail: true
 ---

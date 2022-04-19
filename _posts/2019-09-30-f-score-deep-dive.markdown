@@ -4,7 +4,7 @@ title:  "F-score Deep Dive"
 date:   2019-09-30 12:00:00 +0300
 categories:
 description: "An alternative method for choosing beta in the F-score"
-image: "/assets/thumbnails/f1.png"
+image: "/assets/thumbnails/f1.webp"
 themecolor: "#ffcfcf"
 ---
 

@@ -4,7 +4,7 @@ title:  "Using a mobile device as a rotation controller"
 date:   2019-09-17 12:00:00 +0300
 categories:
 description: "Use your device's orientation sensors to rotate the Earth"
-image: "/assets/thumbnails/rotation_controller_earth.png"
+image: "/assets/thumbnails/rotation_controller_earth.webp"
 themecolor: "#c2e6ff"
 ---
 

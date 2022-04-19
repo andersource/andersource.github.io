@@ -5,7 +5,7 @@ date:   2020-04-15 22:00:00 +0300
 categories:
 description: "Exploring issues with random splits and possible solutions"
 themecolor: "#efe5ff"
-image: "/assets/thumbnails/balanced_splits.png"
+image: "/assets/thumbnails/balanced_splits.webp"
 ---
 
 #### tl;dr: Random splits are common, but maybe not balanced enough for some use cases. I made a [python library for balanced splitting](https://pypi.org/project/balanced-splits/).

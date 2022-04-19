@@ -4,7 +4,7 @@ title:  "Sampling arbitrary probability distributions"
 date:   2019-09-02 00:00:00 +0300
 categories:
 description: "Transforming a uniform distribution to an arbitrary probability distribution"
-image: "/assets/thumbnails/arbitrary_distributions.png"
+image: "/assets/thumbnails/arbitrary_distributions.webp"
 themecolor: "lightyellow"
 ---
 The universe we live in is, to the best of our (current) computational capabilities, wildly non-deterministic.

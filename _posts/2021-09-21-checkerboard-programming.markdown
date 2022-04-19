@@ -5,7 +5,7 @@ date:   2021-09-21 08:00:00 +0300
 categories:
 themecolor: "#f6f6ff"
 description: "A small programming game I've been working on"
-image: "/assets/thumbnails/checkerboardprogramming.png"
+image: "/assets/thumbnails/checkerboardprogramming.webp"
 ---
 My side-project for the last couple of months was [checkerboardprogramming.com](https://www.checkerboardprogramming.com), a small series of programming challenges where you write javascript to match checkerboard color patterns.
 ![Screen shot from checkerboardprogramming.com](/assets/checkerboardprogramming/checkerboardscreenshot.png)
