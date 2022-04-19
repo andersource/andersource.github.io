@@ -133,7 +133,7 @@ Let's try looking at the change as function of size for the shuffled data.
 ![Scatter plot of X vs. shuffled Y - X](/assets/dk-autocorrelation/x_vs_shuffled_y_minus_x.webp)
 
 Hey, there's a correlation there! It's negative this time, and actually stronger (in magnitude) and more significant
-then in the real case. What is going on? Nothing new, really. This is the exact same data from the previous plot,
+than in the real case. What is going on? Nothing new, really. This is the exact same data from the previous plot,
 shown in a different lens. As the states were shuffled, larger states were more likely to be given smaller states,
 and smaller states were more likely to be given larger states. Contrasting X and Y - X gives us a correlation not
 because X appears on both sides of the equation, but because of a very real, concrete phenomenon that's experienced
