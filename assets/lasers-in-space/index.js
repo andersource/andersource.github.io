@@ -306,20 +306,22 @@ function setUpLevel2(scene, lasers, mirrors, mirror_locations, laser_flags, obst
     obstacles.splice(0);
     obstacles.push(wall1, wall2);
 
-    var laserbeam1 = new LaserBeam({color: 0x55ff55, idx: 1});
-    laserbeam1.object3d.position.set(-1, 10, -2);
-    addLaserToScene(laserbeam1, scene);
-    lasers.push({obj: laserbeam1, direction: new THREE.Vector3(-2.5, -7, -8)});
+    setTimeout(function() {
+        var laserbeam1 = new LaserBeam({color: 0x55ff55, idx: 1});
+        laserbeam1.object3d.position.set(-1, 10, -2);
+        addLaserToScene(laserbeam1, scene);
+        lasers.push({obj: laserbeam1, direction: new THREE.Vector3(-2.5, -7, -8)});
 
-    var laserbeam2 = new LaserBeam({color: 0xaa55aa, idx: 3});
-    laserbeam2.object3d.position.set(-1, 10, -2);
-    addLaserToScene(laserbeam2, scene);
-    lasers.push({obj: laserbeam2, direction: new THREE.Vector3(5.5, -11.5, -2)});
+        var laserbeam2 = new LaserBeam({color: 0xaa55aa, idx: 3});
+        laserbeam2.object3d.position.set(-1, 10, -2);
+        addLaserToScene(laserbeam2, scene);
+        lasers.push({obj: laserbeam2, direction: new THREE.Vector3(5.5, -11.5, -2)});
 
-    clearObject(laser_flags);
-    for (var i = 0; i < lasers.length; i++) {
-        laser_flags[lasers[i].obj.idx] = false;
-    }
+        clearObject(laser_flags);
+        for (var i = 0; i < lasers.length; i++) {
+            laser_flags[lasers[i].obj.idx] = false;
+        }
+    }, 500);
 }
 
 
@@ -351,15 +353,17 @@ function setUpLevel3(scene, lasers, mirrors, mirror_locations, laser_flags, obst
 
     obstacles.push(wall1, wall2, wall3, wall4);
 
-    var laserbeam1 = new LaserBeam({color: 0xff5555, idx: 0});
-    laserbeam1.object3d.position.set(-1, 10, -2);
-    addLaserToScene(laserbeam1, scene);
-    lasers.push({obj: laserbeam1, direction: new THREE.Vector3(-6, -10, -4)});
+    setTimeout(function() {
+        var laserbeam1 = new LaserBeam({color: 0xff5555, idx: 0});
+        laserbeam1.object3d.position.set(-1, 10, -2);
+        addLaserToScene(laserbeam1, scene);
+        lasers.push({obj: laserbeam1, direction: new THREE.Vector3(-6, -10, -4)});
 
-    clearObject(laser_flags);
-    for (var i = 0; i < lasers.length; i++) {
-        laser_flags[lasers[i].obj.idx] = false;
-    }
+        clearObject(laser_flags);
+        for (var i = 0; i < lasers.length; i++) {
+            laser_flags[lasers[i].obj.idx] = false;
+        }
+    }, 500);
 }
 
 
