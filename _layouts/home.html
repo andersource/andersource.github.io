@@ -13,7 +13,11 @@ layout: default
     <div class="post-list">
       {%- for post in site.posts -%}
       <div>
-        <a class="post-link" href="{{ post.url | relative_url }}">
+        {%- if post.redirect -%}
+          <a class="post-link" href="{{ post.redirect | relative_url }}">
+        {%- else -%}
+          <a class="post-link" href="{{ post.url | relative_url }}">
+        {%- endif -%}
         {% assign image_style = "contain" %}
         {%- if post.image_style -%}
           {% assign image_style = post.image_style %}
