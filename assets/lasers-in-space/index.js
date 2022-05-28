@@ -1,5 +1,10 @@
 var degtorad = Math.PI / 180;
 var i_alpha = {};
+var initial_matrices = {};
+var calibration_timeout = {};
+
+
+const CALIBRATION_TIME_MS = 200;
 
 
 function euler2quaternion(alpha, beta, gamma) {
@@ -442,7 +447,6 @@ window.onload = function() {
     var lasers = [];
 
     peer.on('open', function(id) {
-        // console.log(id);
         makeQR('https://andersource.dev/lasers-in-space-client.html#hid=' + id);
         peer.on('connection', function(conn) {
             conn.uuid = uuidv4();
@@ -488,19 +492,23 @@ window.onload = function() {
                         cube: cube
                     };
 
-                    console.log(mirror_locations.length);
                     if (mirror_locations.length == 0) {
                         document.getElementById('info').setAttribute('style', 'display: none;');
                     }
+                } else if ('reset_mirror' in data) {
+                    delete initial_matrices[conn.uuid];
                 } else {
-                    if (!(conn.uuid in i_alpha)) {
-                        i_alpha[conn.uuid] = data.alpha;
+                    const q = euler2quaternion(data.alpha, data.beta, data.gamma);
+                    const rotMatrix = new THREE.Matrix4();
+                    rotMatrix.makeRotationFromQuaternion(q);
+                    if (!(conn.uuid in initial_matrices)) {
+                        if (CALIBRATION_TIME_MS < data.dt_ms) {
+                            initial_matrices[conn.uuid] = rotMatrix;
+                        }
+                    } else {
+                         rotMatrix.premultiply(initial_matrices[conn.uuid].clone().invert());
+                         mirrors[conn.uuid].cube.setRotationFromMatrix(rotMatrix);
                     }
-
-                    data.alpha = (data.alpha - i_alpha[conn.uuid]) % 360;
-
-                    var q = euler2quaternion(data.alpha, data.beta, data.gamma);
-                    mirrors[conn.uuid].cube.setRotationFromQuaternion(q);
                 }
             });
         });
