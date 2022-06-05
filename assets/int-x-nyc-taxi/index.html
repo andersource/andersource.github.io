@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>NYC taxi data int-X</title>
+        <link rel="stylesheet" href="index.css"/>
+    </head>
+    <body>
+        <div id="scatterplot-container">
+            <div id="scatterplot" class="viz_area">
+                <div id="scatterplot-buttons-container">
+                    <input type="button" id="btn-reset" title="Reset view"/>
+                    <input type="button" id="btn-details" title="Inspect sample" class="selected selectable">
+                    <input type="button" id="btn-brush" title="Sample selection" class="selectable" />
+                    <input type="button" id="btn-clear-selection" title="Clear selection"/>
+                    <input type="button" id="btn-projection" title="Projection" class="selectable" disabled />
+                    <input type="button" id="btn-clear-projection" title="Clear projection"/>
+                </div>
+                <div id="brush-cursor"></div>
+            </div>
+            <div id="selection-proportion"></div>
+        </div>
+        <div id="side-views">
+            <div id="ny-map" class="viz_area">
+                <div id="map-button-container">
+                    <input type="button" id="btn-reset-map" title="Reset view">
+                </div>
+            </div>
+            <div id="visualizations" class="viz_area">
+                <div id="pop-day"><p>Day</p></div>
+                <div id="pop-time"><p>Time</p></div>
+                <div id="pop-duration"><p>Duration (m)</p></div>
+                <div id="pop-direction"><p>Directions</p></div>
+            </div>
+            <div id="projection-visualizations" class="viz_area hidden">
+                <div id="time-scatterplot"><p>Time</p></div>
+                <div id="duration-scatterplot"><p>Duration</p></div>
+            </div>
+        </div>
+        <script src="d3.v7.min.js"></script>
+        <script src="index.js"></script>
+    </body>
+</html>

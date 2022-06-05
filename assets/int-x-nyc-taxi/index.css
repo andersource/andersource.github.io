@@ -1,0 +1,213 @@
+html {
+    height: 99%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: #eaeaf4;
+    font-family: sans-serif;
+}
+
+#scatterplot-container {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 2em;
+    padding-bottom: 0;
+    position: relative;
+}
+
+#scatterplot {
+    max-width: 100%;
+    max-height: 90%;
+    aspect-ratio: 1;
+    cursor: none;
+}
+
+#scatterplot.projection {
+    cursor: crosshair;
+}
+
+#side-views {
+    float: left;
+    width: 35%;
+    padding: 2em;
+    padding-bottom: 0;
+    height: 95%;
+    text-align: center;
+}
+
+#ny-map {
+    aspect-ratio: 1;
+    max-height: 45%;
+    margin: 0 auto;
+    position: relative;
+}
+
+#visualizations {
+    height: 45%;
+    width: 98%;
+    margin: 2em auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#visualizations div {
+    width: 48%;
+    height: 42%;
+    display: inline-block;
+    margin: .2em;
+}
+
+#visualizations div p {
+    margin: 2px;
+    font-weight: 300;
+}
+
+.viz_area {
+    background: #fff;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+#scatterplot-buttons-container {
+    width: 15%;
+    left: 2em;
+    text-align: center;
+    position: absolute;
+}
+
+#map-button-container {
+    width: 15%;
+    left: .5em;
+    text-align: center;
+    position: absolute;
+}
+
+#brush-cursor {
+    width: 2em;
+    height: 2em;
+    border: 1px solid black;
+    background: none;
+    border-radius: 50%;
+    position: absolute;
+    right: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    display: none;
+}
+
+#brush-cursor.selecting {
+    background: rgba(220, 40, 220, .6);
+}
+
+#brush-cursor.hidden {
+    border: none;
+    background: none;
+}
+
+input[type=button] {
+    margin: .5em;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    outline: none;
+    border: none;
+    background-color: #d4d4e4;
+    width: 3em;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.22), 0 3px 6px rgba(0,0,0,0.34);
+    cursor: pointer;
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .9;
+}
+
+input[type=button]:not([disabled]):hover {
+    background-color: #dbdbe8;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.22), 0 6px 12px rgba(0,0,0,0.34);
+}
+
+input[type=button]:not([disabled]):active {
+    background-color: #e8e8f8;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.22), 0 6px 12px rgba(0,0,0,0.34);
+}
+
+input[type=button][disabled] {
+    background-color: #f4f4f4;
+    cursor: not-allowed;
+}
+
+input[type=button].selected {
+    background-color: #9494b4;
+}
+
+#btn-details {
+    background-image: url("icons/details.png");
+}
+
+#btn-reset, #btn-reset-map {
+    background-image: url("icons/reset.png");
+}
+
+#btn-brush {
+    background-image: url("icons/brush.png");
+}
+
+#btn-clear-selection {
+    background-image: url("icons/clear_brush.png");
+}
+
+#btn-projection {
+    background-image: url("icons/projection.png");
+}
+
+#btn-clear-projection {
+    background-image: url("icons/clear_projection.png");
+}
+
+circle {
+    fill: rgba(40, 220, 190, .6);
+    stroke: black;
+    stroke-width: .2;
+}
+
+circle.inspected {
+    fill: rgba(220, 100, 220, .75);
+}
+
+.ride-line.inspected {
+    stroke: rgba(220, 100, 220, .75);
+    stroke-width: .4;
+}
+
+#selection-proportion {
+    width: 99%;
+    height: 2%;
+    transform: translateY(-100%);
+}
+
+#projection-visualizations {
+    height: 45%;
+    width: 98%;
+    margin: 2em auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.viz_area.hidden {
+    display: none !important;
+}
+
+#projection-visualizations div {
+    width: 92%;
+    height: 42%;
+    display: inline-block;
+    margin: .2em;
+}
+
+#projection-visualizations div p {
+    margin: 2px;
+    font-weight: 300;
+}
