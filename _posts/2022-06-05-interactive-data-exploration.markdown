@@ -159,6 +159,9 @@ of pickup time and duration by projection.
 ![Animation of using brush to highlight samples then projection to view sample projection onto chosen axis](/assets/int-x-nyc-taxi/post-figures/int_x_projection.gif)
 
 This allows us to inspect the way blobs are organized, more easily than the hover inspection tool.
+For example, in the animation above we select the Saturday blob, first projecting it along its long
+axis, which we see corresponds to the pickup time; then we project it along the perpendicular axis,
+and see that it roughly corresponds to the ride location.
 
 
 ## Discussion and variations

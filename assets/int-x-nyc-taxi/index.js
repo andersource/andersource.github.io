@@ -108,6 +108,8 @@ window.onload = function() {
             d.direction = (Math.round((angle - Math.PI / 8) / (Math.PI / 4)) + 8) % 8;
         });
 
+        document.getElementById('loading-data').setAttribute('style', 'display: none;');
+
         const x = d3.scaleLinear()
         .domain([-10, 16])
         .range([ 0, width ]);

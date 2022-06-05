@@ -211,3 +211,11 @@ circle.inspected {
     margin: 2px;
     font-weight: 300;
 }
+
+#loading-data {
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    color: #777;
+    transform: translate(-50%, -50%);
+}
