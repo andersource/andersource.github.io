@@ -135,7 +135,7 @@ Using these we can quickly see that UMAP created a big blob for each day of the 
 for specific types of rides.
 
 The day-blobs are organized such that across their length they correspond to the pickup time, and the
-perpendicular directions roughly corresponds to pickup / dropoff location in Manhattan.
+perpendicular direction roughly corresponds to pickup / dropoff location in Manhattan.
 
 Each day-blob has a slightly separated portion for late-travellers from the day before (or very early?), 
 with the size of the portion increasing as we get closer to the weekend.
