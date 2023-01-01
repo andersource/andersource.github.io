@@ -707,7 +707,9 @@ window.onload = function() {
         scene.add(butterflies[i]);
     }
 
-    animation_frame_id = requestAnimationFrame(render);
+    setTimeout(function() {
+        animation_frame_id = requestAnimationFrame(render);
+    }, 4000);
   }
 
   replace_butterflies();
