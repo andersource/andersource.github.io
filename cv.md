@@ -45,6 +45,9 @@ NOVEMBER 2010 - SEPTEMBER 2012
 
 
 #### Education
+**Reichman University**, Israel - M.Sc. Machine Learning and Data Science, graduated Summa Cum Laude (GPA 95)
+OCTOBER 2020 - AUGUST 2023
+
 **Open University**, Israel - B.Sc. Computer Science, graduated with High Honors (GPA 96)  
 OCTOBER 2013 - SEPTEMBER 2019
 
