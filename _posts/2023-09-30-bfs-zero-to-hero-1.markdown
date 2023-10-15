@@ -3,7 +3,7 @@ layout: post
 title:  "BFS zero-to-hero, part 1: intro & maze"
 date:   2023-09-30 16:00:00 +0300
 categories:
-image: "/assets/thumbnails/maze.webp"
+image: "/assets/thumbnails/bfs_maze.webp"
 image_style: "cover"
 hide_thumbnail: true
 description: "Starting a series of challenges on the application of the BFS algorithm"

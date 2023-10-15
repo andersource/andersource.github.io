@@ -3,7 +3,7 @@ layout: post
 title:  "BFS zero-to-hero, part 2: snake"
 date:   2023-10-15 21:50:00 +0300
 categories:
-image: ""
+image: "/assets/thumbnails/bfs_snake.webp"
 image_style: "cover"
 hide_thumbnail: true
 description: "Part 2 of the BFS challenge series: automatic Snake player"
