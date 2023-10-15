@@ -3,7 +3,6 @@ layout: post
 title:  "BFS zero-to-hero, part 1: intro & maze"
 date:   2023-09-30 16:00:00 +0300
 categories:
-themecolor: "#fffae0"
 image: "/assets/thumbnails/maze.webp"
 image_style: "cover"
 hide_thumbnail: true

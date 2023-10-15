@@ -74,3 +74,13 @@ input[type=range]:focus {
 figcaption {
 	text-align: center;
 }
+
+.spoiler {
+    background: rgb(60, 40, 52);
+    color: rgb(60, 40, 52);
+}
+
+.spoiler p::selection {
+    background: rgb(160, 140, 152);
+    color: #fafafa;
+}
