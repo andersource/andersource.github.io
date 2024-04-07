@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Python Turtle Bingo</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="challenge">
+        <div class="clear"></div>
+        <div id="editor-container">
+            <div id="editor"></div>
+            <input type="button" id="run" value="&#9654; run code"/>
+            <input type="button" id="back" value="&#9664; back"/>
+            <pre id="turtle-print-output" hidden="hidden"></pre>
+        </div>
+        <div id="turtle-container">
+            <div id="turtle-div" hidden="hidden"></div>
+            <canvas id="svg-target" width="500" height="500"></canvas>
+            <img id="target-image" src="/assets/python-turtle-bingo/targets/2-easy/1.png" hidden="hidden" />
+            <canvas id="target-canvas" width="500" height="500"></canvas>
+            <div id="pixel-inspector" class="hidden">
+                <p id="inspect-x">x = 100</p>
+                <p id="inspect-y">y = 200</p>
+                <p id="inspect-color-demo"></p>
+                <p id="inspect-color">#ffffff</p>
+            </div>
+            <div id="score">
+                <div class="colorbar"></div>
+                <div class="mask"></div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <img id="background-image" src="/assets/python-turtle-bingo/assets/pottery_background.webp"/>
+    <div id="target-gallery">
+    </div>
+    <div id="andersource">Made by <a href="/" target="_blank">andersource</a></div>
+    <script type="text/javascript" src="lib/brython.min.js"></script>
+    <script type="text/javascript" src="lib/brython_stdlib.js"></script>
+    <script src="lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="index.js" type="module"></script>
+    <script id="python_script" type="text/python" src="turtle.py"></script>
+</body>
+</html>

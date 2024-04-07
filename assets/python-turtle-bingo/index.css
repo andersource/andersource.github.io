@@ -1,0 +1,297 @@
+pre#turtle-print-output {
+    height: 30%;
+    width: 76%;
+    margin: 0 auto;
+    background: #ff5757;
+    translate: 0% -100%;
+    margin-top: -10em;
+    border-radius: 3px;
+    opacity: .82;
+    border: 1px solid #87001b;
+    color: #87001b;
+    padding: 1em;
+    z-index: 100;
+    text-wrap: wrap;
+}
+
+#background-image {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    filter: saturate(.65) brightness(.9);
+    width: 100%;
+    object-fit: fill;
+}
+
+canvas {
+    width: 500px;
+    height: 500px;
+    border: 1px dashed black;
+    cursor: crosshair;
+}
+
+circle, ellipse, line, path, polygon, polyline, rect {
+    shape-rendering: crispEdges;
+}
+
+img {
+    image-rendering: pixelated;
+    shape-rendering: crispEdges;
+}
+
+#target-gallery {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.target {
+    padding: 20px;
+    background: linear-gradient(45deg, #444, #f4f4f0 10%, #f4f4f0 90%, #444);
+    display: inline-block;
+    width: 24%;
+    box-shadow: 0 .4rem 1rem rgba(0,0,0,0.55);
+    scale: .9;
+    text-align: center;
+    margin: 1em;
+    transition: all .3s ease;
+}
+
+.target:nth-of-type(even) {
+    rotate: 5deg;
+}
+
+.target:nth-of-type(odd) {
+    rotate: -5deg;
+}
+
+.target.hidden {
+    background: none;
+    box-shadow: none;
+}
+
+.target.solved {
+    background: linear-gradient(45deg, gold, #fbfbf8 10%, #fbfbf8 90%, gold);
+    cursor: default !important;
+}
+
+.target.shiftDown {
+    translate: 0% 33%;
+}
+
+.target:not(.hidden):hover {
+    scale: none;
+    rotate: none;
+    cursor: pointer;
+    box-shadow: 0 .6rem 1.2rem rgba(0,0,0,0.55);
+}
+
+.target > img {
+    width: 100%;
+    filter: saturate(.2);
+    border: 1px dashed black;
+}
+
+.target.solved > img {
+    filter: saturate(1);
+}
+
+.target .difficulty {
+    width: 100%;
+    height: 2em;
+    margin: 1em auto;
+}
+
+.target .difficulty img {
+    display: inline-block;
+    max-width: 100%;
+    max-height: 100%;
+    filter: saturate(0);
+    margin: .2em;
+    content: url(/assets/python-turtle-bingo/assets/turtle_shell.png);
+}
+
+.target.solved .difficulty img {
+    content: url(/assets/python-turtle-bingo/assets/turtle.png);
+    filter: saturate(1);
+}
+
+#challenge {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    z-index: 1;
+    transition: all .5s ease;
+}
+
+#challenge.hidden {
+    translate: 0% -100%;
+}
+
+#editor-container {
+    height: 100%;
+    display: inline-block;
+    overflow-y: hidden;
+}
+
+#editor {
+    width: 100%;
+    height: 100%;
+}
+
+#turtle-container {
+    height: 100%;
+    width: 500px;
+    float: right;
+    font-size: 0;
+    background: #fcfcff;
+}
+
+input[type=button] {
+    cursor: pointer;
+    padding: .6em;
+    outline: none;
+    font-size: 1.6em;
+    font-family: monospace;
+    border: none;
+    border-radius: 3px;
+    transition: all .5s ease;
+}
+
+#run {
+    float: right;
+    translate: -10% -110%;
+    background: #3bd901;
+    color: 02152a;
+}
+
+#back {
+    translate: 50% -110%;
+}
+
+#run:hover {
+    background: #12b100;
+}
+
+#back:hover {
+    background: #999;
+}
+
+#pixel-inspector {
+    height: 6%;
+    width: fit-content;
+    margin: 1rem auto 0 auto;
+}
+
+#pixel-inspector p {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: .5rem;
+    margin-right: .5rem;
+    font-size: 1rem;
+    font-family: monospace;
+    padding: 5px;
+}
+
+#pixel-inspector.hidden p {
+    display: none;
+}
+
+#pixel-inspector:not(.hidden) #inspect-color-demo {
+    width: .17rem;
+    height: .17rem;
+    background: red;
+    display: inline-block;
+    margin-right: .05rem;
+    border: 1px solid black;
+}
+
+#pixel-inspector #inspect-color {
+    margin-left: .1rem;
+}
+
+#score {
+    height: 10%;
+    width: 75%;
+    position: relative;
+    margin: 0 auto;
+}
+
+#score .colorbar {
+    width: 100%;
+    height: 2rem;
+    background: linear-gradient(45deg, #f7797d, #FBD786, #C6FFDD 90%);
+    border-radius: 1rem;
+    margin: 0 auto;
+}
+
+#score .mask {
+    width: 100%;
+    height: 2rem;
+    background: white;
+    position: absolute;
+    right: 0;
+    transition: all .5s ease;
+    translate: 0 -100%;
+}
+
+#score .mask::before {
+    content: '';
+    width: 2rem;
+    height: 2rem;
+    display: inline-block;
+    background-image: url(/assets/python-turtle-bingo/assets/turtle.png);
+    background-size: contain;
+    translate: -50% 0;
+    transition: rotate 1s ease;
+}
+
+#score .mask.solved::before {
+    rotate: 360deg;
+}
+
+#andersource {
+    font-family: monospace;
+    font-size: 1.2em;
+    margin: 1em auto;
+    text-align: center;
+    background: rgba(240, 240, 240, .85);
+    width: fit-content;
+    padding: 1em;
+}
+
+@media (max-width: 1200px) {
+    #pixel-inspector p {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: 0;
+        margin-left: .2rem;
+        margin-right: .2rem;
+        font-size: .75rem;
+        font-family: monospace;
+        padding: 5px;
+    }
+
+    #pixel-inspector.hidden p {
+        display: none;
+    }
+
+    #pixel-inspector:not(.hidden) #inspect-color-demo {
+        width: .17rem;
+        height: .17rem;
+        background: red;
+        display: inline-block;
+        margin-right: .05rem;
+        border: 1px solid black;
+    }
+
+    #pixel-inspector #inspect-color {
+        margin-left: .05rem;
+    }
+}
