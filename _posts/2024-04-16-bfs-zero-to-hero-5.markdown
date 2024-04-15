@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "BFS zero-to-hero, part 5: the 15-puzzle"
-date:   2024-04-16 00:12:00 +0300
+date:   2024-04-16 00:14:00 +0300
 categories:
 image: "/assets/thumbnails/bfs_15_puzzle.webp"
 themecolor: "#bdb397"
