@@ -7,6 +7,7 @@ style: home.css
 
 I offer workshops in these topics:
 
+* <a href='https://codyssey.andersource.dev' target='_blank'>Codyssey</a> - 3-hour competitive workshop where coders write code to play simple games
 * <a href='https://andersource-public.s3.us-west-2.amazonaws.com/workshops/intro2ds.pdf' target='_blank'>Introduction to Data Science</a>
 * <a href='https://andersource-public.s3.us-west-2.amazonaws.com/workshops/intro2dl.pdf' target='_blank'>Introduction to Deep Learning</a>
 * <a href='https://andersource-public.s3.us-west-2.amazonaws.com/workshops/optimization.pdf' target='_blank'>Optimization Techniques</a>
