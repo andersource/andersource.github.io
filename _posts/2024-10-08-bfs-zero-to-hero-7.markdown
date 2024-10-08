@@ -16,7 +16,7 @@ hide_thumbnail: "true"
 [Part 1](/2023/09/30/bfs-zero-to-hero-1.html) |
 [Part 2](/2023/10/15/bfs-zero-to-hero-2.html) |
 [Parts 3 & 4](/2024/04/12/bfs-zero-to-hero-3-4.html) |
-[Part 5](/2024/04/16/bfs-zero-to-hero-5.html) |
+[Part 5](/2024/04/15/bfs-zero-to-hero-5.html) |
 [Part 6](/2024/09/30/bfs-zero-to-hero-6.html)
 
 ### Challenge 7: Crosstabs everywhere
@@ -76,7 +76,7 @@ GROUP BY    Customer.Name, Product.Name
 
 A pivot quickly follows, sprinkle some UI, deploy, and wham! Your manager has her [crosstab](https://en.wikipedia.org/wiki/Contingency_table).
 
-The view is well-received -- so much, in fact, that a week later your manager clears all your JIRA tickets, hangs an ERD poster of the company's sprawling database next to your desk, and hands you the specs of 73 crosstab requests from various execs in the organization.  
+The view is well-received -- so much, in fact, that a week later your manager clears all your JIRA tickets, hangs an ERD poster of the company's sprawling database next to your desk, and hands you the specs for 73 crosstab requests from various execs in the organization.  
 
 Other engineers would have been overwhelmed, perhaps. Not you; you won't let a bit of work get in the way of being lazy.
 

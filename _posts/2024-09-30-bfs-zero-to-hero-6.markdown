@@ -16,7 +16,7 @@ description: "Solving the famous traffic jam game with BFS"
 [Part 1](/2023/09/30/bfs-zero-to-hero-1.html) |
 [Part 2](/2023/10/15/bfs-zero-to-hero-2.html) |
 [Parts 3 & 4](/2024/04/12/bfs-zero-to-hero-3-4.html) |
-[Part 5](/2024/04/16/bfs-zero-to-hero-5.html)
+[Part 5](/2024/04/15/bfs-zero-to-hero-5.html)
 
 ### Challenge 6: [Rush Hour](https://en.wikipedia.org/wiki/Rush_Hour_(puzzle))
 Rush Hour is a famous puzzle game where you slide vehicles to unjam a red car to freedom. It's a nice game - I spent hours with it as a kid!
