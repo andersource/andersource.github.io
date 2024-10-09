@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Codyssey @ Pycon IL 2024"
-date:   2024-10-09 13:25:00:00 +0300
+date:   2024-10-09 13:00:00:00 +0300
 categories:
 image: "/assets/thumbnails/codyssey.webp"
 image_style: "cover"
