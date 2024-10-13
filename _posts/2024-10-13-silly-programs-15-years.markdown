@@ -53,7 +53,7 @@ We had a power-user culture and used lots of shortcuts; sometimes when a colleag
 shortcuts to point to this. It'd open notepad, blurt some insult, and spawn a pacman that would chase the mouse around. When the pacman was
 on the mouse you couldn't click anything (because the pacman captured the mouse press event.)
 
-When you tried to open task manager, it closed the process but rendered a "fake" task manager (which looks very out-of-place on Windows 7), only to close it dramatically a few seconds later (this part sometimes crashes on Windows 11).
+When you tried to open task manager, it closed the process but rendered a "fake" task manager (which looks very out-of-place on Windows 11), only to close it dramatically a few seconds later (this part sometimes crashes on Windows 11).
 
 When you tried to open the commandline shell, it closed it and was angry (jittering around.)
 
