@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Silly programs from almost 15 years ago"
-date:   2024-10-13 10:00:00:00 +0300
+date:   2024-10-13 08:30:00:00 +0300
 categories:
 image: "/assets/thumbnails/silly_programs.webp"
 image_style: "cover"
