@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Heads or Tails"
-date:   2024-11-04 17:30:00:00 +0300
+date:   2024-11-04 14:30:00:00 +0300
 categories:
 image: "/assets/thumbnails/heads_or_tails.webp"
 themecolor: "#04001B"
