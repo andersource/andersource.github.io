@@ -34,7 +34,7 @@ The game guesses the player's next choice, and should these choices exhibit any 
 During the exercise, you'll implement increasingly sophisticated algorithms for predicting the player's next choice given their choice history,
 with the game visualizing the algorithms' predictive power on your choices as a player. Ready to be unpredictable?
 
-### 00 preparations
+### 00 Preparations
 1. Download [this html file](https://gist.github.com/andersource/f7bbb33621d5169addcf44920ba506d5)
 2. Open it in your favorite web IDE and navigate to `YOUR CODE GOES HERE`
 3. Open it in a browser too (with js enabled)

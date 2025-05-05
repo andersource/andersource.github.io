@@ -7,11 +7,12 @@ exclude: True
 I love meeting people and getting involved in new projects. If you think my experience could be relevant to what you're doing, please get in touch!
 
 ### Consulting & Freelancing
-I provide consulting and hands-on freelancing services in the domains of data science and software development. Partial list of things I'm excited about:
+I provide consulting and hands-on freelancing services in the domains of machine learning, data science and software development. Partial list of things I'm excited about:
 * Algorithms and optimizations
 * Translating experts' domain knowledge and intuition into concrete methods and metrics
 * Designing ad-hoc models that make the most of little data (mostly because that involves designing custom metrics and coming up with creative ways of optimizing them)
 * Finding patterns in behavior
+* Computer vision
 * Creating interactive visualizations to explore complex data and interactions
 
 

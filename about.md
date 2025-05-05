@@ -5,7 +5,7 @@ permalink: /about/
 style: home.css
 ---
 
-Hi! I'm Daniel, a software engineer and data scientist. [Work with me](/work_together/) \| [CV](/cv/)
+Hi! I'm Daniel, a machine learning research engineer. [Work with me](/work_together/) \| [CV](/cv/)
 
 You'll probably learn more about me reading the rest of the site, so in the meantime here's an ascii cat:
 

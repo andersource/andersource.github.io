@@ -9,12 +9,12 @@ style: cv.css
 	<img src="/assets/cv/daniel.png">
 </p>
 
-### Data Scientist, Software Engineer
+### Machine Learning Research Engineer
 
 #### Employment
 **andersource**, Israel - _Self-employed_  
 JULY 2020 - PRESENT  
-Data science and software engineering consulting, freelancing and training.
+Machine learning consulting, freelancing and training.
 
 **Nutrino (acquired by Medtronic)**, Israel - _Data Scientist_  
 JANUARY 2017 - PRESENT    
