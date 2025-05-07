@@ -163,6 +163,9 @@ As for why the plot looks different for bigger values of $$ \alpha $$, my hunch 
 While I certainly don't know everything about class weighting now, I've come away from the analysis very satisfied:
 I know that class imbalance, _in and of itself_, does not warrant using class weights. Furthermore, if I deem class weights necessary, instead of using the typical "inverse proportion" scheme, my weights had better be informed by the particular problem characteristics: the nature of the tradeoff curve, label noise, and the cost I assign to each type of error.
 
+## Code
+Code for the visualizations and simulation can be found [here](https://github.com/andersource/imbalanced-learning-adventures).
+
 ## Related
 
 * [Cost-sensitive machine learning](https://en.wikipedia.org/wiki/Cost-sensitive_machine_learning)
