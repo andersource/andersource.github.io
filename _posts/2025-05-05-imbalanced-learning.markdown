@@ -163,6 +163,32 @@ As for why the plot looks different for bigger values of $$ \alpha $$, my hunch 
 While I certainly don't know everything about class weighting now, I've come away from the analysis very satisfied:
 I know that class imbalance, _in and of itself_, does not warrant using class weights. Furthermore, if I deem class weights necessary, instead of using the typical "inverse proportion" scheme, my weights had better be informed by the particular problem characteristics: the nature of the tradeoff curve, label noise, and the cost I assign to each type of error.
 
+## Update 08/05/2025
+
+After publishing the post it's been pointed out to me that there are tutorials that specifically demonstrate how inverse proportion weighting
+(or stratified under- / oversampling, which is pretty equivalent) improves imbalanced classification performance. This piqued my interest and I looked at such a tutorial, and found something very interesting.
+To measure performance, the tutorial used the [balanced accuracy score](https://scikit-learn.org/stable/modules/model_evaluation.html#balanced-accuracy-score) rather than $$ F_1 $$.
+
+$$ F_1 $$ is the [harmonic average](https://en.wikipedia.org/wiki/Harmonic_mean) of positive precision and positive recall; balanced accuracy is the (regular) average between positive recall and negative recall. On the surface, the two metrics look similar enough: each in itself is a combination of two metrics, corresponding to the two types of errors we can make.
+
+But, as always, the details are important. I used the same optimization framework as before but looked at expected balanced accuracy (instead of expected $$ F_1 $$) as a function of class weight, and here's what I got:
+
+![Theoretic impact of alpha on balanced accuracy score for different values of p](/assets/imbalanced-learning/theoretic_scores_balanced_accuracy.png)
+
+Look at that - completely different from the $$ F_1 $$ behavior! Moreover, the optimal weight is _indeed the inverse proportion rule of thumb_. This is splendid: the theoretic methodology is in accordance with results people get in the wild.
+Less selfishly, it really highlights the importance of choice of metric on model tuning - different metrics respond very differently to our choice of hyperparameters.
+
+#### $$ F_1 $$ vs. balanced accuracy
+Let's dive into the difference between the two metrics, so we have an intuition for which one to choose. Specifically, we'll look for a scenario where they are very different from each other.
+
+Imagine we have 1000 samples - 10 positive, 990 negative. We classify all positives as positive, 40 negatives as positive.
+Positive recall is perfect (100%), negative recall is $$ \frac{950}{990} \approx $$ 96%, positive precision is $$ \frac{10}{50} = $$ 20%. Balanced accuracy would be very high, but $$ F_1 $$ would be very low.
+
+This is an example of the way different metrics induce different preferences over the two types of errors. There's no absolute right or wrong here - it's a matter of aligning your technical choice to the domain.
+
+### Conclusion (again)
+To me, this reinforces the importance of considering the downstream use of the model, and consulting business stakeholders when tuning the model for hard prediction.
+
 ## Code
 Code for the visualizations and simulation can be found [here](https://github.com/andersource/imbalanced-learning-adventures).
 

@@ -30,4 +30,23 @@ layout: default
 
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<form action="https://on-post-subscribe-sa7cpagoga-uc.a.run.app" method="POST"
+      style="text-align: center; padding: 15px; background: #F1F1F5;"
+      target="dummyframe" onsubmit="clearEmail()">
+  <p>Sign up here to get updates on new posts:</p>
+  <input type="email" name="email" id="email"
+         required style="font-family: Roboto; width: 45%;" />
+  <input type="submit" value="Subscribe" onclick="validateSubmit()" style="font-family: Roboto;" />
+</form>
+
+<iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
+
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.min.js"></script>
+<script type="text/javascript">
+  function clearEmail() {
+    setTimeout(function() {
+      document.querySelector('#email').value = '';
+    }, 5);
+  }
+</script>
