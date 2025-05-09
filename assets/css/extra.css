@@ -88,16 +88,15 @@ figcaption {
 #subscribeToast {
     visibility: hidden;
     min-width: 250px;
-    margin-left: -125px;
     background-color: #334;
     color: #fff;
     text-align: center;
     border-radius: 2px;
     padding: 16px;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     left: 50%;
-    bottom: 30px;
+    translate: -50% 0;
 
     &.show {
         visibility: visible;
@@ -107,22 +106,22 @@ figcaption {
 }
 
 @-webkit-keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    from {translate: -50% 30px; opacity: 0;}
+    to {translate: -50% 0; opacity: 1;}
 }
 
 @keyframes fadein {
-    from {bottom: 0; opacity: 0;}
-    to {bottom: 30px; opacity: 1;}
+    from {translate: -50% 30px; opacity: 0;}
+    to {translate: -50% 0; opacity: 1;}
 }
 
 @-webkit-keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    from {translate: -50% 0; opacity: 1;}
+    to {translate: -50% 30px; opacity: 0;}
 }
 
 @keyframes fadeout {
-    from {bottom: 30px; opacity: 1;}
-    to {bottom: 0; opacity: 0;}
+    from {translate: -50% 0; opacity: 1;}
+    to {translate: -50% 30px; opacity: 0;}
 }
 
