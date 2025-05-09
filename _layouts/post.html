@@ -37,7 +37,8 @@ layout: default
   <p>Sign up here to get updates on new posts:</p>
   <input type="email" name="email" id="email" placeholder="email"
          required style="font-family: Roboto; width: 45%;" />
-  <input type="submit" value="Subscribe" onclick="validateSubmit()" style="font-family: Roboto;" />
+  <input type="submit" value="Subscribe" style="font-family: Roboto;" />
+  <div id="subscribeToast">Thanks for subscribing!</div>
 </form>
 
 <iframe name="dummyframe" id="dummyframe" style="display: none;"></iframe>
@@ -47,6 +48,15 @@ layout: default
   function clearEmail() {
     setTimeout(function() {
       document.querySelector('#email').value = '';
+      showToast();
     }, 5);
+  }
+
+  function showToast() {
+    const toast = document.querySelector("#subscribeToast");
+    toast.classList.add('show');
+    setTimeout(function() {
+      toast.classList.remove('show');
+    }, 3000);
   }
 </script>
