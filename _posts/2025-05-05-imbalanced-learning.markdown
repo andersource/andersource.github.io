@@ -57,7 +57,7 @@ Later, we'll ponder *how* to choose the tradeoff. But to do that we first need t
 
 Like I previously mentioned, initial modeling stages try to give us the best tradeoff curve possible for the task - using data, model type, training techniques, whatever. At those stages we can optimize for threshold-independent metrics, for example various [area under the curve](https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc) metrics. But ultimately, somewhere downstream the model's output will be binarized, and we might as well take that into consideration when tuning the model.
 
-I'm personally fond of the [F-score](https://en.wikipedia.org/wiki/F-score) - it combines two very interpretable metrics (precision and recall), which makes cummunicating with less technical stakeholders (such as product managers and the FDA) easier, and can be [easily tweaked to account for error type preferences](/2019/09/30/f-score-deep-dive.html). 
+I'm personally fond of the [F-score](https://en.wikipedia.org/wiki/F-score) - it combines two very interpretable metrics ([precision and recall](https://en.wikipedia.org/wiki/Precision_and_recall)), which makes communicating with less technical stakeholders (such as product managers and the FDA) easier, and can be [easily tweaked to account for error type preferences](/2019/09/30/f-score-deep-dive.html). 
 
 For this problem precision and recall were equally important, so I used the $$ F_1 $$ score:
 
@@ -75,7 +75,7 @@ $$ BCE = -\sum_i{\alpha y_i \log_2{\hat{y_i}} + (1 - y_i) \log_2{(1 - \hat{y_i}}
 
 ## Optimizing Away
 
-Now that all the actors are on stage, let's roll our sleeves and get our hands dirty.
+Now that all the actors are on stage, let's roll up our sleeves and get our hands dirty.
 
 First, we'll take a step back from looking at individual instances, and look at the relationship between positive and negative instances, based on $$ \beta $$, the positive class prevalence. To that end, we'll replace individual $$ \hat{y_i} $$ and $$ 1 - \hat{y_i} $$ with their respective expectations, $$ x $$ and $$ z $$. Further, our assumed tradeoff curve constrains one by the other; let's reframe the loss as a function of $$ x $$ (also dependent on $$ \alpha $$, $$ \beta $$, and $$ p $$.)
 
