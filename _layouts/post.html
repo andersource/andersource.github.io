@@ -38,6 +38,10 @@ layout: default
   <input type="email" name="email" id="email" placeholder="email"
          required style="font-family: Roboto; width: 45%;" />
   <input type="hidden" id="source" name="source" value="{{page.title}}" />
+  <div style="display: none;">
+    <label for="firstname">What is your first name?</label>
+    <input type="text" id="firstname" name="firstname" />
+  </div>
   <input type="submit" value="Subscribe" style="font-family: Roboto;" />
   <div id="subscribeToast">Thanks for subscribing!</div>
 </form>
