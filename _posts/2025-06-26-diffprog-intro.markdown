@@ -162,7 +162,7 @@ a graph, we can calculate gradients (within the computer's resources constraints
 #### Differentiating through conditions?
 
 While constructing the computational graph within branches or loops isn't an issue, if we want the optimiation
-to include the _conditions_ that determine those branches - well, that's tricker. Still possible, though!
+to include the _conditions_ that determine those branches - well, that's trickier. Still possible, though!
 
 Suppose our computation goes through a simple `if-else` branch, and we want the `if`'s condition to be included in the optimization.
 
