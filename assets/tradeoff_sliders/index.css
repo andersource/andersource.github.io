@@ -1,0 +1,147 @@
+body {
+    text-align: center;
+    margin: 0 auto;
+    /*background: #d3cce0;*/
+    background: #38235c;
+    color: white;
+    font-size: 1.1em;
+}
+
+#container {
+    width: 65%;
+    margin: 6em auto;
+    font-family: system-ui;
+}
+
+input[type=text] {
+    width: 75%;
+    font-family: monospace;
+    text-align: center;
+    font-size: 1.64em;
+    border-radius: 1em;
+    border: none;
+    padding: .3em;
+    outline: none;
+}
+
+#go {
+    transform: translateX(-100%);
+    font-size: 1.64em;
+    border-radius: 1em;
+    border: none;
+    padding: .3em;
+    font-family: monospace;
+    background: #c41a3c;
+    color: white;
+    cursor: pointer;
+}
+
+#go:active, #go:hover {
+    background: #a80c2b;
+}
+
+input[type=range] {
+    width: 70%;
+    margin: 1.5em;
+}
+
+input[type=number] {
+    font-size: 1.08em;
+    width: 5em;
+    border-radius: 20px;
+    padding: .1em .5em;
+}
+
+#sliders-container {
+    padding-top: 1.5em;
+}
+
+#bounds-container > p {
+    margin: 1.2em 0;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+[data-error] {
+    color: red;
+}
+
+output.bubble {
+    background: #c41a3c;
+    color: white;
+    position: absolute;
+    transform: translateX(-50%) translateY(calc(-50% - 3px));
+    left: 0;
+    padding: .15em .35em;
+    border-radius: 3px;
+}
+
+output.bubble:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid #c41a3c;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -1px;
+}
+
+div.anchor {
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    position: relative;
+}
+
+div.anchor label, div.anchor p {
+    position: absolute;
+    right: 0;
+    width: max-content;
+    margin: 0;
+}
+
+#embed p {
+    text-align: left;
+    margin-top: 0;
+    margin-bottom: -.85em;
+    margin-left: 1em;
+    color: #dec104;
+    font-size: 1.2em;
+    position: relative;
+}
+
+pre {
+    text-align: left;
+    border: 1px solid #dec104;
+    border-radius: 10px;
+    padding: 2em 1em;
+    overflow: auto;
+    max-height: 9em;
+    overflow: auto;
+    background: #59566a;
+}
+
+input[type=button][value=copy] {
+    cursor: pointer;
+    position: absolute;
+    left: 7em;
+    font-family: system-ui;
+    background: none;
+    color: white;
+    border: 1px solid white;
+    border-radius: 3px;
+    font-size: .8em;
+    transform: translateY(-.3em);
+
+    &:active, &:hover {
+        background: rgba(255, 255, 255, .3);
+    }
+
+    transition: .25s background;
+}

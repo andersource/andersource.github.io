@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tradeoff Sliders</title>
+    <link rel="stylesheet" href="index.css"/>
+</head>
+<body>
+    <div id="container">
+        <input type="text" id="expression" placeholder="x + y + z == 1.2" /><input type="button" id="go" value="GO" /><br/>
+        <div id="bounds-container"></div>
+        <div id="sliders-container"></div>
+        <div><p id="error" class="hidden" data-error>ook narf zbang</p></div>
+        <div id="embed" class="hidden">
+            <p>HTML <input type="button" value="copy" id="copy_html" /></p>
+            <pre id="html"></pre>
+            <p>CSS <input type="button" value="copy" id="copy_css" /></p>
+            <pre id="css">
+input[type=range] {
+    width: 70%;
+    margin: 2em;
+}
+
+output.bubble {
+    background: red;
+    color: white;
+    position: absolute;
+    transform: translateX(-50%) translateY(calc(-50% - 3px));
+    left: 0;
+    padding: .15em .35em;
+    border-radius: 3px;
+}
+
+output.bubble:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 5px solid red;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    top: 100%;
+    left: 50%;
+    margin-left: -3px;
+    margin-top: -1px;
+}
+
+div.anchor {
+    display: inline-block;
+    width: 0;
+    height: 1em;
+    position: relative;
+}
+
+div.anchor label, div.anchor p {
+    position: absolute;
+    right: 0;
+    width: max-content;
+    margin: 0;
+}
+
+.container {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.error {
+    color: red;
+    text-align: center;
+}</pre>
+            <p>javascript <input type="button" value="copy" id="copy_js" /></p>
+            <pre id="javascript"></pre>
+        </div>
+    </div>
+    <script src="index.js" type="module"></script>
+</body>
+</html>
