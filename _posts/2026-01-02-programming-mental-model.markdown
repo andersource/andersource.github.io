@@ -109,4 +109,4 @@ But then I met my wife, who cooks amazing food and, impressively, can improvise 
 
 Some may call it _good intuition_, and different people may have natural inclinations to develop those for different areas, but I've found the idea of a mental model an interesting lens to reason about how experts approach their work.
 
-I also think about the fraction of students for whom a mental model of programming doesn't come naturally, and how this can be bridged with an appropriate pedagogical approach. What other areas could beneift from something like that? 
+I also think about the fraction of students for whom a mental model of programming doesn't come naturally, and how this can be bridged with an appropriate pedagogical approach. What other areas could benefit from something like that? 
